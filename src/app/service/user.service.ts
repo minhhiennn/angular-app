@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user';
-import { users } from 'src/assets/data.json';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private Users: User[] = [];
-  url = 'http://localhost:3000/users';
+  url = 'https://first-fucking-app-angular.herokuapp.com/users';
+  //url = 'http://localhost:3000/users';
   private currentUser: User | null = null;
   constructor(private http: HttpClient) {
     // Get data in local json file
@@ -48,7 +48,7 @@ export class UserService {
   addNewUser(name: string, email: string, password: string) {
     let id: number = this.Users.length + 1;
     let newUser: User = new User(id, name, email, password);
+    this.http.post(this.url, newUser).subscribe();
     this.Users.push(newUser);
-    console.log(this.Users);
   }
 }

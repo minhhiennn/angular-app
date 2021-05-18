@@ -34,8 +34,7 @@ export class CartComponent implements OnInit {
   decreaseByOne(productId: number) {
     for (let i = 0; i < this.cartItems.length; i++) {
       if (this.cartItems[i].getProduct().getId() == productId) {
-        if (this.cartItems[i].getQuantity() > 1) {
-          
+        if (this.cartItems[i].getQuantity() > 1) {          
           this.cartItems[i].setQuantity(this.cartItems[i].getQuantity() - 1);
           this.cartItems[i].setPriceTotal(this.cartItems[i].getQuantity() * this.cartItems[i].getProduct().getPrice());
           break;
