@@ -22,6 +22,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { ShopListProductComponent } from './component/shop-list-product/shop-list-product.component';
 import { AccountComponent } from './component/account/account.component';
+import { Ng5SliderModule } from 'ng5-slider';
  ''
 @NgModule({
   declarations: [
@@ -41,12 +42,14 @@ import { AccountComponent } from './component/account/account.component';
     CheckoutComponent,
     ShopListProductComponent,
     AccountComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    Ng5SliderModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
