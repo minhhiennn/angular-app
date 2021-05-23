@@ -23,7 +23,8 @@ import { CheckoutComponent } from './component/checkout/checkout.component';
 import { ShopListProductComponent } from './component/shop-list-product/shop-list-product.component';
 import { AccountComponent } from './component/account/account.component';
 import { Ng5SliderModule } from 'ng5-slider';
- ''
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,10 @@ import { Ng5SliderModule } from 'ng5-slider';
     BrowserAnimationsModule,
     Ng5SliderModule,
     HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyDfni1WuIp9vDdQ-FtQoPF-OQ4LfRggcYY",
+      libraries: ["places", "geometry"]
+  }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
